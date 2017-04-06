@@ -1,11 +1,12 @@
 {
   "name": "s3-website-cloudfront",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Creates a S3 bucket with cloudfront disto and SSL cert for static sites",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel -w src/ -d build -s --copy-files"
+    "build": "./node_modules/.bin/babel -w src/ -d build -s --copy-files",
+    "start": "node build/index.js"
   },
   "author": "",
   "license": "MIT",
