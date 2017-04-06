@@ -6,9 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/babel -w src/ -d build -s --copy-files",
-    "start": "node build/index.js"
+    "start": "LOCAL=true node build/index.js"
   },
-  "author": "",
+  "bin": {
+    "s3-website-cloudfront": "./bin/s3-website-cloudfront.js"
+  },
+  "author": "Callum Silcock",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.16.0",
@@ -26,6 +29,8 @@
     "globby": "^6.1.0"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "aws-sdk": "^2.39.0",
+    "commander": "^2.9.0",
+    "s3rver": "^1.0.3"
   }
 }

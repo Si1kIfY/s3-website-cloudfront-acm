@@ -1,9 +1,18 @@
+#!/usr/bin/env node
+
 import program from 'commander'
+import s3 from './library/s3'
 
 program
-  .version('0.0.1')
-  .option('-t, --test [type]', 'Testing commander', 'none')
-  .parse(process.argv)
+  .command('*')
+  .action((domain) => {
+    console.log('creating bucket: "%s"', domain)
+    console.log(process.env)
+    s3.createBucket({
 
-console.log('you tested with:')
-console.log('  - %s test', program.test)
+    }, (err, bucket) => {
+
+    })
+  })
+
+program.parse(process.argv)
